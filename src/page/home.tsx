@@ -1,17 +1,26 @@
-import * as React from 'react';
-import { Layout } from '@/components';
-import { ImageServicesPexels } from '@/services';
+import { Layout, Search } from '@/components';
 
 const Home = () => {
-  React.useEffect(() => {
-    const fectData = async () => {
-      console.log(await ImageServicesPexels());
-    };
+  // const { searchResult } = useAppSelector(
+  //   (state) => state.images as IImageSearchDataState
+  // );
+  // const dispatch = useDispatch();
 
-    fectData();
-  }, []);
+  // const loadImage = async () => {
+  //   const imagesFound = await ImageServicesPexels();
 
-  return <Layout>Home</Layout>;
+  //   dispatch(searchSucceeded(imagesFound));
+  // };
+
+  // React.useEffect(() => {
+  //   void loadImage();
+  // }, []);
+
+  return (
+    <Layout>
+      <Search />
+    </Layout>
+  );
 };
 
 export default Home;

@@ -1,3 +1,5 @@
-export * from './slices';
-export * from './slices/pexels';
+export * from './hooks';
+export * from './reducers';
+export * from './slice';
+export * from './slice/pexels';
 export * from './store';
