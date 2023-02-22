@@ -1,4 +1,4 @@
-import { Layout, Search } from '@/components';
+import { Layout, Search, SearchResultComponent } from '@/components';
 
 const Home = () => {
   // const { searchResult } = useAppSelector(
@@ -19,6 +19,7 @@ const Home = () => {
   return (
     <Layout>
       <Search />
+      <SearchResultComponent />
     </Layout>
   );
 };

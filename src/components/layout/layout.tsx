@@ -8,7 +8,7 @@ interface LayoutProp {
 
 const Layout: React.FC<LayoutProp> = ({ children }) => {
   return (
-    <Box>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'secondary.main' }}>
       <Navbar />
       {children}
     </Box>

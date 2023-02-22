@@ -50,8 +50,14 @@ const Search = () => {
         justifyContent: 'center',
         paddingY: '3rem',
         bgcolor: 'secondary.main',
+        flexDirection: 'column',
+        alignItems: 'center',
+        alignContent: 'center',
       }}
     >
+      <Box sx={{ width: '15rem' }}>
+        <img width={'100%'} src="./logo_images.png" />
+      </Box>
       <FormControl sx={{ m: 1, width: 'auto' }} size="small">
         <Box
           sx={{
