@@ -39,6 +39,6 @@ The aplication allows users to search for images using the Pexels API. Users can
 
 If you want to contribute to this project, please open an issue or submit a pull request. We're happy to review your contributions!.
 
-## 📄 Licencia
+## 📄 License
 
 This project is licensed under the MIT.
