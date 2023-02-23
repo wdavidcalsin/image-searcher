@@ -1,9 +1,9 @@
-import { type Photo } from 'pexels';
+import { type Video, type Photo } from 'pexels';
 import { Subject } from 'rxjs';
 
 interface IImageDataModal {
   isOpen: boolean;
-  image?: Photo;
+  file?: Photo | Video;
 }
 
 export class SubjectModal {

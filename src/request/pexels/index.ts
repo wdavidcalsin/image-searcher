@@ -1,1 +1,1 @@
-export * from './image-request-pexels';
+export * from './pexels-request';

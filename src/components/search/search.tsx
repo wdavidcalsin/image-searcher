@@ -5,7 +5,8 @@ import {
   useAppSelector,
 } from '@/redux';
 import { ImageServicesPexels } from '@/services';
-import { type IImageSearchDataState } from '@/types';
+import { VideoServicesPexels } from '@/services/pexels/video-services-pexels';
+import { type ISearchDataState } from '@/types';
 import {
   Box,
   Button,
@@ -20,7 +21,7 @@ import { useDispatch } from 'react-redux';
 
 const Search = () => {
   const { searchOption, searchText } = useAppSelector(
-    (state) => state.images as IImageSearchDataState
+    (state) => state.images as ISearchDataState
   );
   const dispatch = useDispatch();
 
@@ -34,10 +35,13 @@ const Search = () => {
     dispatch(setSearchText(event.target.value));
   };
 
-  const handleClickSearch = (event: React.MouseEvent) => {
+  const handleClickSearch = () => {
     const searchImages = async () => {
-      const imagesFound = await ImageServicesPexels(searchText);
-      dispatch(searchSucceeded(imagesFound));
+      const multimediaOutput =
+        searchOption === 'image'
+          ? await ImageServicesPexels(searchText)
+          : await VideoServicesPexels(searchText);
+      dispatch(searchSucceeded(multimediaOutput));
     };
 
     void searchImages();

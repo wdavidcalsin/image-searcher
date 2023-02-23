@@ -1,7 +1,7 @@
-import { type IImageSearchDataState } from '@/types';
+import { type ISearchDataState } from '@/types';
 import { type Photo } from 'pexels';
 
-export const imageDataModel: IImageSearchDataState = {
+export const imageDataModel: ISearchDataState = {
   searchOption: 'image',
   searchText: '',
   status: 'idle',

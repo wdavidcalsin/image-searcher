@@ -1,9 +1,9 @@
-import { imageDataModel } from '@/model';
-import { type searchOptionType, type IImageSearchDataState } from '@/types';
+import { imageDataModel, videoDataModel } from '@/model';
+import { type ISearchDataState, type searchOptionType } from '@/types';
 import { createSlice, type PayloadAction, type Slice } from '@reduxjs/toolkit';
-import { type PhotosWithTotalResults } from 'pexels';
+import { type PhotosWithTotalResults, type Videos } from 'pexels';
 
-const initialState: IImageSearchDataState = Object.assign(imageDataModel);
+const initialState: ISearchDataState = Object.assign(imageDataModel);
 
 export const imageDataSlice: Slice = createSlice({
   name: 'imagesData',
@@ -11,6 +11,7 @@ export const imageDataSlice: Slice = createSlice({
   reducers: {
     setSearchOption(state, action: PayloadAction<searchOptionType>) {
       state.searchOption = action.payload;
+      state = action.payload === 'image' ? imageDataModel : videoDataModel;
     },
     setSearchText(state, action: PayloadAction<string>) {
       state.searchText = action.payload;
@@ -18,7 +19,10 @@ export const imageDataSlice: Slice = createSlice({
     searchLoading(state) {
       state.status = 'loading';
     },
-    searchSucceeded(state, action: PayloadAction<PhotosWithTotalResults>) {
+    searchSucceeded(
+      state,
+      action: PayloadAction<PhotosWithTotalResults | Videos>
+    ) {
       state.status = 'succeeded';
       state.searchResult = action.payload;
     },

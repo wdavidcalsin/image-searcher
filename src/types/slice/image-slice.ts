@@ -1,11 +1,11 @@
-import { type PhotosWithTotalResults } from 'pexels';
+import { type Videos, type PhotosWithTotalResults } from 'pexels';
 
 export type searchOptionType = 'image' | 'video';
 export type statusType = 'idle' | 'loading' | 'success' | 'failed';
 
-export interface IImageSearchDataState {
+export interface ISearchDataState {
   searchOption: searchOptionType;
   searchText: string;
   status: statusType;
-  searchResult: PhotosWithTotalResults;
+  searchResult: PhotosWithTotalResults | Videos;
 }
