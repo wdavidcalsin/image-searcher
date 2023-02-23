@@ -39,8 +39,8 @@ const SearchResultComponent = () => {
               }}
             >
               <img
-                src={`${image.src.small}?w=162&auto=format`}
-                srcSet={`${image.src.small}?w=162&auto=format&dpr=2 2x`}
+                src={`${image.src.tiny}?w=162&auto=format`}
+                srcSet={`${image.src.tiny}?w=162&auto=format&dpr=2 2x`}
                 loading="lazy"
                 style={{
                   borderRadius: 4,
