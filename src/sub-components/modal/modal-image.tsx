@@ -17,23 +17,27 @@ const style: SxProps = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 500,
+  width: {
+    xs: 300,
+    sm: 300,
+    md: 500,
+    lg: 500,
+  },
   maxHeight: '90vh',
   bgcolor: 'secondary.main',
   borderRadius: '1rem',
   overflow: 'auto',
   boxShadow: 24,
   p: 2,
+
   '&::-webkit-scrollbar': {
     width: '7px',
-    marginRight: '20px',
   },
   '&::-webkit-scrollbar-track': {
-    bgcolor: 'primary.main',
-    borderRadius: '50px',
+    bgcolor: 'none',
   },
   '&::-webkit-scrollbar-thumb': {
-    bgcolor: 'secondary.main',
+    bgcolor: 'primary.main',
     borderRadius: '50px',
   },
 };
