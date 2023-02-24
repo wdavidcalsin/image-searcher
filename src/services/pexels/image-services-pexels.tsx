@@ -1,10 +1,7 @@
-import { PexelsRequest } from '@/request';
+import { PexelsRequestPhotos } from '@/request';
 
 export const ImageServicesPexels = async (query: string) => {
-  const resultImage = (await PexelsRequest()).photos.search({
-    query,
-    per_page: 10,
-  });
+  const resultImage = await PexelsRequestPhotos.get(query);
 
-  return await resultImage;
+  return resultImage;
 };

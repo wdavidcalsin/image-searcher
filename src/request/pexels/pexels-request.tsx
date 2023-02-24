@@ -1,8 +1,34 @@
-import { API_KEY } from '@/constants';
-import { createClient } from 'pexels';
+import { API_BASE_URL } from '@/constants';
 
-export const PexelsRequest = async () => {
-  const clientImages = createClient(API_KEY);
+export const PexelsRequestPhotos = {
+  get: async (query: string) => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/photos/${query}`);
+      return await res.json();
+    } catch (err) {
+      console.log('The petition failed ', err);
+    }
+  },
+};
 
-  return clientImages;
+export const PexelsRequestVideos = {
+  get: async (query: string) => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/videos/${query}`);
+      return await res.json();
+    } catch (err) {
+      console.log('The petition failed ', err);
+    }
+  },
+};
+
+export const PexelsRequestPopularPhotos = {
+  get: async () => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/popular-photos`);
+      return await res.json();
+    } catch (err) {
+      console.log('The petition failed ', err);
+    }
+  },
 };

@@ -1,4 +1,4 @@
-import { type PhotosWithTotalResults, type Videos } from 'pexels';
+import { type PhotosWithTotalResults, type Videos } from '@/types';
 
 interface Props {
   searchResult: PhotosWithTotalResults | Videos;

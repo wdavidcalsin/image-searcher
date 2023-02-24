@@ -1,10 +1,9 @@
 import { setPopularImages, useAppSelector } from '@/redux';
 import { PopularImageService } from '@/services';
-import { type ISearchDataState } from '@/types';
+import { type Photo, type ISearchDataState } from '@/types';
 import { sharingInformationModalService } from '@/utilities';
 import { Masonry } from '@mui/lab';
 import { Box } from '@mui/material';
-import { type Photo } from 'pexels';
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
 

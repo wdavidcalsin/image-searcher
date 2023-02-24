@@ -1,6 +1,6 @@
 import { downloadVideo } from '@/services';
+import { type Video } from '@/types';
 import { Box, Chip, Stack, Typography } from '@mui/material';
-import { type Video } from 'pexels';
 import * as React from 'react';
 
 interface PropsModalVideo {

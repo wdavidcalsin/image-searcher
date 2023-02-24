@@ -1,10 +1,7 @@
-import { PexelsRequest } from '@/request';
+import { PexelsRequestVideos } from '@/request';
 
 export const VideoServicesPexels = async (query: string) => {
-  const resultVideo = (await PexelsRequest()).videos.search({
-    query,
-    per_page: 10,
-  });
+  const resultVideo = await PexelsRequestVideos.get(query);
 
-  return await resultVideo;
+  return resultVideo;
 };

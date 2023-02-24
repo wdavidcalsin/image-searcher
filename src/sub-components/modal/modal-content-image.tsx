@@ -1,6 +1,6 @@
 import { downloadImage } from '@/services';
+import { type Photo } from '@/types';
 import { Box, Chip, Stack, Typography } from '@mui/material';
-import { type Photo } from 'pexels';
 import * as React from 'react';
 
 interface PropsModalImage {

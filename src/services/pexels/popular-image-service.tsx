@@ -1,9 +1,7 @@
-import { PexelsRequest } from '@/request';
+import { PexelsRequestPopularPhotos } from '@/request';
 
 export const PopularImageService = async () => {
-  const resultPopularImage = (await PexelsRequest()).photos.curated({
-    per_page: 10,
-  });
+  const resultPopularImage = await PexelsRequestPopularPhotos.get();
 
-  return await resultPopularImage;
+  return resultPopularImage;
 };

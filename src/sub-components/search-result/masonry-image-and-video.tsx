@@ -1,9 +1,8 @@
 import { useAppSelector } from '@/redux';
-import { type ISearchDataState } from '@/types';
+import { type Photo, type Video, type ISearchDataState } from '@/types';
 import { sharingInformationModalService } from '@/utilities';
 import { Masonry } from '@mui/lab';
 import { Box } from '@mui/material';
-import { type Photo, type Video } from 'pexels';
 
 const MasonryImageAndVideo = () => {
   const { searchResult } = useAppSelector(

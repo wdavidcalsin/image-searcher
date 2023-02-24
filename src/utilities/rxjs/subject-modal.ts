@@ -1,4 +1,4 @@
-import { type Video, type Photo } from 'pexels';
+import { type Photo, type Video } from '@/types';
 import { Subject } from 'rxjs';
 
 interface IImageDataModal {
