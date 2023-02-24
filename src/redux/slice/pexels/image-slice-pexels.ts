@@ -7,10 +7,13 @@ const initialState: ISearchDataState = Object.assign(imageDataModel);
 
 export const imageDataSlice: Slice = createSlice({
   name: 'imagesData',
+
   initialState,
+
   reducers: {
     setSearchOption(state, action: PayloadAction<searchOptionType>) {
       state.searchOption = action.payload;
+
       state = action.payload === 'image' ? imageDataModel : videoDataModel;
     },
     setSearchText(state, action: PayloadAction<string>) {
@@ -21,10 +24,15 @@ export const imageDataSlice: Slice = createSlice({
     },
     searchSucceeded(
       state,
+
       action: PayloadAction<PhotosWithTotalResults | Videos>
     ) {
       state.status = 'succeeded';
+
       state.searchResult = action.payload;
+    },
+    setPopularImages(state, action: PayloadAction<PhotosWithTotalResults>) {
+      state.popularImages = action.payload;
     },
     searchFailed(state) {
       state.status = 'failed';
@@ -34,9 +42,15 @@ export const imageDataSlice: Slice = createSlice({
 
 export const {
   setSearchOption,
+
   setSearchText,
+
   searchLoading,
+
   searchSucceeded,
+
+  setPopularImages,
+
   searchFailed,
 } = imageDataSlice.actions;
 

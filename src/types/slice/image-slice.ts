@@ -8,4 +8,5 @@ export interface ISearchDataState {
   searchText: string;
   status: statusType;
   searchResult: PhotosWithTotalResults | Videos;
+  popularImages: PhotosWithTotalResults;
 }

@@ -71,9 +71,13 @@ const ModalContentVideo: React.FC<PropsModalVideo> = ({ video }) => {
             {video.video_files.map((itemVideo, index) => (
               <Chip
                 key={index}
-                label={`${itemVideo.quality} ${itemVideo.width ?? 'N/A'} * ${
-                  itemVideo.height ?? 'N/A'
-                }`}
+                label={
+                  <Box sx={{ textTransform: 'uppercase' }}>{`${
+                    itemVideo.quality
+                  } ${itemVideo.width ?? 'N/A'} * ${
+                    itemVideo.height ?? 'N/A'
+                  }`}</Box>
+                }
                 variant="outlined"
                 onClick={() => {
                   handleDownloadVideo(itemVideo.link, video.user.name);
