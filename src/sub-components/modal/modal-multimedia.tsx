@@ -1,7 +1,7 @@
 import { photoDataModel } from '@/model';
+import { type Photo, type Video } from '@/types';
 import { sharingInformationModalService } from '@/utilities';
 import { Box, Modal, type SxProps } from '@mui/material';
-import { type Photo, type Video } from 'pexels';
 import * as React from 'react';
 import ModalContentImage from './modal-content-image';
 import ModalContentVideo from './modal-content-video';
@@ -77,7 +77,9 @@ const ModalImage = () => {
           }}
         >
           {'src' in fileState && <ModalContentImage image={fileState} />}
-          {'video_files' in fileState && <ModalContentVideo video={fileState} />}
+          {'video_files' in fileState && (
+            <ModalContentVideo video={fileState} />
+          )}
         </Box>
       </Box>
     </Modal>

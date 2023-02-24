@@ -1,7 +1,11 @@
 import { imageDataModel, videoDataModel } from '@/model';
-import { type ISearchDataState, type searchOptionType } from '@/types';
+import {
+  type PhotosWithTotalResults,
+  type Videos,
+  type ISearchDataState,
+  type searchOptionType,
+} from '@/types';
 import { createSlice, type PayloadAction, type Slice } from '@reduxjs/toolkit';
-import { type PhotosWithTotalResults, type Videos } from 'pexels';
 
 const initialState: ISearchDataState = Object.assign(imageDataModel);
 
