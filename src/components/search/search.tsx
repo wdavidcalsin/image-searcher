@@ -1,12 +1,4 @@
-import {
-  searchSucceeded,
-  setSearchOption,
-  setSearchText,
-  useAppSelector,
-} from '@/redux';
-import { ImageServicesPexels } from '@/services';
-import { VideoServicesPexels } from '@/services/pexels/video-services-pexels';
-import { type ISearchDataState } from '@/types';
+import { useSearch } from '@/hooks';
 import {
   Box,
   Button,
@@ -14,38 +6,15 @@ import {
   MenuItem,
   Select,
   TextField,
-  type SelectChangeEvent,
 } from '@mui/material';
-import * as React from 'react';
-import { useDispatch } from 'react-redux';
 
 const Search = () => {
-  const { searchOption, searchText } = useAppSelector(
-    (state) => state.images as ISearchDataState
-  );
-  const dispatch = useDispatch();
-
-  const handleChangeOption = (event: SelectChangeEvent) => {
-    dispatch(setSearchOption(event.target.value));
-  };
-
-  const handleChangeSearchText = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    dispatch(setSearchText(event.target.value));
-  };
-
-  const handleClickSearch = () => {
-    const searchImages = async () => {
-      const multimediaOutput =
-        searchOption === 'image'
-          ? await ImageServicesPexels(searchText)
-          : await VideoServicesPexels(searchText);
-      dispatch(searchSucceeded(multimediaOutput));
-    };
-
-    void searchImages();
-  };
+  const {
+    searchOption,
+    handleChangeOption,
+    handleChangeSearchText,
+    handleClickSearch,
+  } = useSearch();
 
   return (
     <Box
