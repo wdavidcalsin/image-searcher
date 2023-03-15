@@ -18,6 +18,7 @@ export const imageDataModel: ISearchDataState = {
     next_page: 0,
     photos: [],
   },
+  isLoadingFile: false,
 };
 
 export const photoDataModel: Photo = {

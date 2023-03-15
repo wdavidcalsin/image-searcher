@@ -32,14 +32,20 @@ export const imageDataSlice: Slice = createSlice({
       action: PayloadAction<PhotosWithTotalResults | Videos>
     ) {
       state.status = 'succeeded';
-
+      state.isLoadingFile = true;
       state.searchResult = action.payload;
+      state.isLoadingFile = false;
     },
     setPopularImages(state, action: PayloadAction<PhotosWithTotalResults>) {
+      state.isLoadingFile = true;
       state.popularImages = action.payload;
+      state.isLoadingFile = false;
     },
     searchFailed(state) {
       state.status = 'failed';
+    },
+    setIsLoadingFile(state, action: PayloadAction<PhotosWithTotalResults>) {
+      state.isLoadingFile = action.payload;
     },
   },
 });
@@ -56,6 +62,8 @@ export const {
   setPopularImages,
 
   searchFailed,
+
+  setIsLoadingFile,
 } = imageDataSlice.actions;
 
 export default imageDataSlice.reducer;

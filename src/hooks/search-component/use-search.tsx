@@ -3,6 +3,7 @@ import {
   setSearchOption,
   setSearchText,
   searchSucceeded,
+  setIsLoadingFile,
 } from '@/redux';
 import { ImageServicesPexels, VideoServicesPexels } from '@/services';
 import { type ISearchDataState } from '@/types';
@@ -27,12 +28,18 @@ export const useSearch = () => {
 
   const handleClickSearch = () => {
     const searchImages = async () => {
+      dispatch(setIsLoadingFile(true));
+
       const multimediaOutput =
         searchOption === 'image'
           ? await ImageServicesPexels(searchText)
           : await VideoServicesPexels(searchText);
       dispatch(searchSucceeded(multimediaOutput));
+
+      dispatch(setIsLoadingFile(false));
     };
+
+    if (searchText === '') return;
 
     void searchImages();
   };

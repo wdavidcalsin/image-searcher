@@ -18,4 +18,5 @@ export const videoDataModel: ISearchDataState = {
     next_page: 0,
     photos: [],
   },
+  isLoadingFile: false,
 };

@@ -9,4 +9,5 @@ export interface ISearchDataState {
   status: statusType;
   searchResult: PhotosWithTotalResults | Videos;
   popularImages: PhotosWithTotalResults;
+  isLoadingFile: boolean;
 }
